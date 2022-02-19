@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <style>
+	body {background-color: #070E13;}
+	#video {left: 50%; top: 50%; transform: translate(-50%, -50%); position: absolute; display: block}
+	#text {color: #FFF; left: 50%; top: 25%; transform: translate(-50%, -50%); position: absolute; display: block; }
+    </style>
+    <script>
+
+        let retrievedTime = document.cookie
+
+        window.onunload = function(){
+	    document.cookie = document.getElementById('video').currentTime;
+	}
+
+    </script>
+</head>
+
+<body>
+    <h id="text">The Money Masters: Rise of the bankers</h>
+    <video id="video" controls autoplay name="media">
+	<source src="/media/data/The-Money-Masters.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        document.getElementById('video').addEventListener('loadedmetadata', function() {
+	    this.currentTime = retrievedTime;
+	}, false);
+    </script>
+
+</body>
+
+</html>

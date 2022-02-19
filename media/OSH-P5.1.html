@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <style>
+	body {background-color: #070E13;}
+	#media {left: 50%; top: 50%; transform: translate(-50%, -50%); position: absolute; display: block}
+	#text {color: #FFF; left: 50%; top: 20%; transform: translate(-50%, -50%); position: absolute; display: block; }
+    </style>
+    <script>
+
+        let retrievedTime = document.cookie
+
+        window.onunload = function(){
+	    document.cookie = document.getElementById('media').currentTime;
+	}
+
+    </script>
+</head>
+
+<body>
+    <h id="text">Our Subverted History - Part 5.1: The Orea Linda Book</h>
+
+    <video id="media" controls autoplay name="media">
+	    <source src="/media/data/OSH-P5.1[audio].mp3" type="video/mp4">
+    </video>
+
+    <script>
+        document.getElementById('media').addEventListener('loadedmetadata', function() {
+	    this.currentTime = retrievedTime;
+	}, false);
+    </script>
+
+</body>
+
+</html>
