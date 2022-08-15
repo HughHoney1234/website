@@ -1,0 +1,102 @@
+<!doctype htm>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Archive</title>
+        <link id="theme" rel="stylesheet" type="text/css" href="/style/dark-style.css"/>
+        <script src="/theme.js"></script>
+    </head>
+
+    <div id="header">
+        <a href="/index.html"><img src="/style/archive-logo.png" style="height: 4%"/></a>&nbsp;
+        <span class="hidden"> - </span>
+	<span id="headerSubtitle">Computer Science</span>
+    </div>
+
+	<hr class="hidden"/>
+	<div id="menu">
+	    <a href="/index.html"><b>Home</b></a>
+	    <a href="/comp/comp-home.html">Computer Science</a>
+	    <a href="/pol/pol-home.html">Politics</a>
+	    <a href="/his/hisHome.html">History</a>
+	    <a href="/fit/fit-home.html">Health and Fitness</a>
+
+	    <span class="right">
+	    <a href="javascript:;" id="theme-toggle">Light Mode</a>
+	    <a href="/media.html">Media</a>
+	    <a href="//git.suckless.org">source</a>
+	    </span>
+
+	</div>
+   
+    <hr class="hidden"/>
+    <div id="content">
+        <div id="nav">
+	    <ul>
+	        <li><a href="comp-categories.html"><b>Categories</b></a></li>
+		<li><a href="program-execution.html">Program Execution</a></li>
+	   </ul>
+	</div>
+
+	<hr class="hidden"/>
+	<div id="main">
+		<hr>
+		<h1 class="heading">1	Program Execution</h1>
+		<p>
+		Program Execution describes how a computer runs the instructions of a program.
+		This involves compilation of the program and then the various techniques used 
+		to effectively run it
+		</p>
+		<hr>
+		<h2 class"section">1.1	Overview</h2>
+		<h3 class="subsection">1.1.1	Program</h3>
+		<p>
+		The program refers to the sequence of instructions that are to be fed into
+		the processing units in order for to get the computer to perform the desired tasks.
+		The program is the term for the abstraction of the instructions with the source code
+		and executable binary being different forms of the program. 
+		</p>		
+		<h3 class="subsection">1.1.2	Process</h3>
+		<p>
+		The process is the instantiation of a program. It refers specifically to the
+		execution of the program instructions in memory. A process is carried out by one or many threads.
+		Concurrency(multithreading) refers to multiple threads executing the same process while multitasking
+		is the concurrent execution of multiple processes.
+		</p>
+		<h3 class="subsection">1.1.3	Thread</h3>
+		<p>
+		The thread is the smallest unit of execution that can be managed by a scheduler. Many processes are
+		executed concurrently meaning that multiple threads are used to run the same process. This allows a
+		process to perform multiple tasks at once by having each thread share memory within the PCB.
+		</p>
+		<hr>
+		<h2 class="section">1.2 Execution</h2>
+		<p>Once a program has been conceived it will be written in a high level language, complied 
+		into an object file and then linked to form a binary file. The binary file consists of a 
+		lines of machine code which will be executed with the instruction cycle(fetch-decode-execute).
+		In order for a program to run on a system it must interface with the system's application
+		binary interface (ABI). 
+		</p>
+		<p>
+		The program starts executing from the entry point after which it simply follows the 
+		given instructions through. This state is termed run-time which is the final stage in
+		the program lifecycle. An executing program can have multiple threads which carry out the
+		execution, these threads are managed by the scheduler which, through preemption, switches
+		between different threads depending on priority enabling multithreading. This switching is
+		known as context switching.
+		</p>
+		<p>
+		An operating system with multitasking must have a system of process states as two instructions
+		can not be executed simultaneously. The states are kernel specific however they share functionality.
+		</p>
+		<p>
+		They are as follows:
+		<li>Created - The program is loaded from secondary storage to main memory
+		<li>Waiting - The process waits for a context switch
+		<li>Running - The process has its next instructions exectured by the processor
+		<li>Blocked - The process cannot be executed as it waits for input
+		<li>Terminated - The process has finished running
+		</p>
+	</div>
+    </div>
+</html>
